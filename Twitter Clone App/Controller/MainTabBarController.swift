@@ -13,6 +13,15 @@ class MainTabBarController: UITabBarController {
     
     // MARK: - Properties
     
+    var user : User? {
+        didSet{
+            guard let nav = viewControllers?[0] as? UINavigationController else {return}
+            guard let feed = nav.viewControllers.first as? FeedController else {return}
+            
+            feed.user = user
+        }
+    }
+    
     let acitonButton : UIButton = {
         
         let btn = UIButton(type: .system)
@@ -35,17 +44,25 @@ class MainTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         authinticateAndCOnfigureUI()
 
+
         
     }
 
-   override func viewDidLayoutSubviews() {
-       super.viewDidLayoutSubviews()
-       tabBar.frame.size.height = 60
-       tabBar.frame.origin.y = view.frame.height - 95
-   }
+//   override func viewDidLayoutSubviews() {
+//       super.viewDidLayoutSubviews()
+//       tabBar.frame.size.height = 60
+//       tabBar.frame.origin.y = view.frame.height - 95
+//   }
     
     
     //MARK: - API
+    
+    func fetchUser() {
+        
+        UserService.shared.fetchUser { (user) in
+            self.user = user
+        }
+    }
     
     func authinticateAndCOnfigureUI() {
         
@@ -59,6 +76,7 @@ class MainTabBarController: UITabBarController {
         else{
             configureUI()
             configureViewControllers()
+            fetchUser()
         }
     }
     

@@ -25,6 +25,8 @@
 		4260EB142512575600B064A8 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4260EB132512575600B064A8 /* NotificationController.swift */; };
 		4260EB16251264E500B064A8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4260EB15251264E500B064A8 /* Extensions.swift */; };
 		42EF978B251A15D7000E8456 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF978A251A15D6000E8456 /* AuthService.swift */; };
+		42EF978D251A79CD000E8456 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF978C251A79CD000E8456 /* UserService.swift */; };
+		42EF978F251A82D0000E8456 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF978E251A82D0000E8456 /* User.swift */; };
 		42F065002519499000980239 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F064FF2519499000980239 /* Constants.swift */; };
 		42F61907251931FD004A6E0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42F61906251931FD004A6E0A /* GoogleService-Info.plist */; };
 		DAE15D3F4BD4698C62B41DA6 /* Pods_Twitter_Clone_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EB4AF794F95584F104C3FB /* Pods_Twitter_Clone_App.framework */; };
@@ -53,6 +55,8 @@
 		4260EB132512575600B064A8 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		4260EB15251264E500B064A8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		42EF978A251A15D6000E8456 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		42EF978C251A79CD000E8456 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		42EF978E251A82D0000E8456 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		42F064FF2519499000980239 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		42F61906251931FD004A6E0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB9321D59DB308C80A48FEB8 /* Pods-Twitter Clone App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter Clone App.release.xcconfig"; path = "Target Support Files/Pods-Twitter Clone App/Pods-Twitter Clone App.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 		4260EB012512517A00B064A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				42EF978E251A82D0000E8456 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				42EF978A251A15D6000E8456 /* AuthService.swift */,
+				42EF978C251A79CD000E8456 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 				4260EB16251264E500B064A8 /* Extensions.swift in Sources */,
 				4260EAEE2512505A00B064A8 /* AppDelegate.swift in Sources */,
 				42F065002519499000980239 /* Constants.swift in Sources */,
+				42EF978D251A79CD000E8456 /* UserService.swift in Sources */,
 				4260EB142512575600B064A8 /* NotificationController.swift in Sources */,
 				4260EB0E251254C000B064A8 /* FeedController.swift in Sources */,
 				4260EB0C251252C600B064A8 /* MainTabBarController.swift in Sources */,
@@ -318,6 +325,7 @@
 				4260EB12251256E300B064A8 /* MessageConttroller.swift in Sources */,
 				42155BAB2513CAB700F65B5D /* MyTabBar.swift in Sources */,
 				4260EB10251256C100B064A8 /* ExploreController.swift in Sources */,
+				42EF978F251A82D0000E8456 /* User.swift in Sources */,
 				42155BA92513AABC00F65B5D /* UITabController.swift in Sources */,
 				42155BB22514D8C000F65B5D /* RegistrationController.swift in Sources */,
 				42EF978B251A15D7000E8456 /* AuthService.swift in Sources */,

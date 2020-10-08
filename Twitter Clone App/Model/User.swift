@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 struct User {
     let email : String
@@ -14,8 +15,14 @@ struct User {
     let password : String
     var profileImageURL : URL?
     let userName : String
+    var isFollowed = false
+    var stats : UserRelationStats?
     
     let uid  : String
+    
+    var iscurrentUser : Bool {
+        Auth.auth().currentUser?.uid == uid
+    }
     
     init(uid:String ,dictionary:[String:AnyObject]) {
         self.uid = uid
@@ -31,4 +38,9 @@ struct User {
         }
 
     }
+}
+
+struct UserRelationStats {
+    let follower : Int
+    let following : Int
 }

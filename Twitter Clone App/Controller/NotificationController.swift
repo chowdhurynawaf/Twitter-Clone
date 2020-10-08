@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationController: UITabBarController {
+class NotificationController: UIViewController {
     
     // MARK: - Properties
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageConttroller: UITabBarController {
+class MessageConttroller: UIViewController {
     
     // MARK: - Properties
     

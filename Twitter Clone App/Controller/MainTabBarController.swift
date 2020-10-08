@@ -45,21 +45,17 @@ class MainTabBarController: UITabBarController {
         authinticateAndCOnfigureUI()
 
 
+
         
     }
 
-//   override func viewDidLayoutSubviews() {
-//       super.viewDidLayoutSubviews()
-//       tabBar.frame.size.height = 60
-//       tabBar.frame.origin.y = view.frame.height - 95
-//   }
     
     
     //MARK: - API
     
     func fetchUser() {
-        
-        UserService.shared.fetchUser { (user) in
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        UserService.shared.fetchUser(uid: uid) { (user) in
             self.user = user
         }
     }
@@ -93,7 +89,13 @@ class MainTabBarController: UITabBarController {
     // MARK: - Selectors
      
      @objc func actionBtntapped() {
-         print("23")
+        guard let user = user else {return}
+        let controller = UploadTweetController(user: user, config: .tweet)
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true, completion:nil)
+        
+        
      }
      
     
@@ -116,7 +118,7 @@ class MainTabBarController: UITabBarController {
     
     func configureViewControllers() {
         
-        let feed         = FeedController()
+        let feed         = FeedController(collectionViewLayout: UICollectionViewFlowLayout())
         let nav1         = templateNavigationController(image: #imageLiteral(resourceName: "home_unselected"), rootViewController: feed)
         let message      = MessageConttroller()
         let nav4         = templateNavigationController(image: #imageLiteral(resourceName: "ic_mail_outline_white_2x-1"), rootViewController: message)

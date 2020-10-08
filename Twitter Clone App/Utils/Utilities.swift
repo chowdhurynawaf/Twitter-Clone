@@ -8,7 +8,11 @@
 
 import UIKit
 
+
+
+
 class Utilities {
+
     
     
      func inputContainerView(image:UIImage , textField : UITextField ) -> UIView {
@@ -57,4 +61,101 @@ class Utilities {
         
         return btn
     }
+    
+   func createProfileImageView()->UIImageView {
+        
+             
+              let iv = UIImageView()
+              iv.contentMode = .scaleAspectFill
+              iv.clipsToBounds = true
+              iv.setDimensions(width: 48, height: 48)
+              iv.layer.cornerRadius = 48 / 2
+              iv.backgroundColor = .twitterBlue
+              iv.isUserInteractionEnabled = true
+              
+          
+        
+        return iv
+    }
+    
+
+
+   
+    func createNameLabel() -> UILabel {
+         var nameLabel : UILabel = {
+            let label = UILabel()
+             label.font = UIFont.boldSystemFont(ofSize: 20)
+            label.text = "nameLabel"
+             return label
+             
+         }()
+        
+        return nameLabel
+    }
+   
+    func createUsernameLabel()->UILabel {
+
+        
+         var userNameLabel : UILabel = {
+            let label = UILabel()
+             label.font = UIFont.systemFont(ofSize: 16)
+            label.text = "uesrname"
+             label.textColor = .lightGray
+             return label
+             
+         }()
+        
+        return userNameLabel
+    }
+    
+   func createCaptionLabel()->UILabel {
+    
+             let captionLabel : UILabel =  {
+             let label = UILabel()
+             label.font = UIFont.systemFont(ofSize: 20)
+             label.numberOfLines = 0
+             label.text = "some caption label"
+             return label
+            
+             
+         }()
+    
+        return captionLabel
+    }
+    
+    
+    func createDateLabel()->UILabel {
+        
+        var dateLabel : UILabel = {
+            let label = UILabel()
+            label.font = UIFont.systemFont(ofSize: 14)
+            label.text = "06-11-12"
+            label.textColor = .lightGray
+            label.textAlignment = .left
+            return label
+            
+        }()
+        
+        return dateLabel
+    }
+
+   
+
+   
+   private lazy var nameLabel : UILabel = {
+       let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+       label.text = "nameLabel"
+        return label
+        
+    }()
+   
+   private lazy var userNameLabel : UILabel = {
+       let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+       label.text = "uesrname"
+        label.textColor = .lightGray
+        return label
+        
+    }()
 }

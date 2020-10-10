@@ -21,6 +21,8 @@
 		422E684B2524C462004A5338 /* ProfileFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422E684A2524C462004A5338 /* ProfileFilterView.swift */; };
 		422E684D2524C7A1004A5338 /* ProfileFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422E684C2524C7A1004A5338 /* ProfileFilterCell.swift */; };
 		422E684F252513DE004A5338 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422E684E252513DE004A5338 /* ProfileHeaderViewModel.swift */; };
+		424472D825307AB600A43A83 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424472D725307AB600A43A83 /* NotificationCell.swift */; };
+		424472DA2530A02E00A43A83 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424472D92530A02E00A43A83 /* NotificationViewModel.swift */; };
 		4260EAEE2512505A00B064A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4260EAED2512505A00B064A8 /* AppDelegate.swift */; };
 		4260EAF02512505A00B064A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4260EAEF2512505A00B064A8 /* SceneDelegate.swift */; };
 		4260EAF22512505A00B064A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4260EAF12512505A00B064A8 /* ViewController.swift */; };
@@ -69,6 +71,8 @@
 		422E684A2524C462004A5338 /* ProfileFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterView.swift; sourceTree = "<group>"; };
 		422E684C2524C7A1004A5338 /* ProfileFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterCell.swift; sourceTree = "<group>"; };
 		422E684E252513DE004A5338 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
+		424472D725307AB600A43A83 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		424472D92530A02E00A43A83 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		4260EAEA2512505A00B064A8 /* Twitter Clone App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter Clone App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4260EAED2512505A00B064A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4260EAEF2512505A00B064A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				4203ECF3252705C9001ECE8F /* UserCell.swift */,
 				42E6C75E2528FE3600B0A4CD /* TweetHeader.swift */,
 				42920444252C9C4B008288B7 /* ActionSheetCell.swift */,
+				424472D725307AB600A43A83 /* NotificationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				422E684E252513DE004A5338 /* ProfileHeaderViewModel.swift */,
 				42E3601C252BB3E4006F28D1 /* UploadTweetViewModel.swift */,
 				42920446252CB6B2008288B7 /* ActionSheetViewModel.swift */,
+				424472D92530A02E00A43A83 /* NotificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -380,9 +386,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				422E684725246FC9004A5338 /* ProfileController.swift in Sources */,
+				424472DA2530A02E00A43A83 /* NotificationViewModel.swift in Sources */,
 				4260EAF22512505A00B064A8 /* ViewController.swift in Sources */,
 				42155BAE2514D76F00F65B5D /* LoginController.swift in Sources */,
 				42155BB42514E97900F65B5D /* Utilities.swift in Sources */,
+				424472D825307AB600A43A83 /* NotificationCell.swift in Sources */,
 				42920447252CB6B2008288B7 /* ActionSheetViewModel.swift in Sources */,
 				422E684F252513DE004A5338 /* ProfileHeaderViewModel.swift in Sources */,
 				4260EB16251264E500B064A8 /* Extensions.swift in Sources */,

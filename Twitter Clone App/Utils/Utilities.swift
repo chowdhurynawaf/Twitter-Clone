@@ -13,7 +13,7 @@ import UIKit
 
 class Utilities {
 
-    
+    static let shared = Utilities()
     
      func inputContainerView(image:UIImage , textField : UITextField ) -> UIView {
         
@@ -72,6 +72,7 @@ class Utilities {
               iv.layer.cornerRadius = 48 / 2
               iv.backgroundColor = .twitterBlue
               iv.isUserInteractionEnabled = true
+    
               
           
         

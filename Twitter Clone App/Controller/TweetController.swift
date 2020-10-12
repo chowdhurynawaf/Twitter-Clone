@@ -40,6 +40,15 @@ class TweetController : UICollectionViewController {
         fetchReplies()
     }
 
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        
+        navigationController?.navigationBar.barStyle = .black // this line changes status bar color
+        navigationController?.navigationBar.isHidden = true
+    }
 
     //MARK: - API
 

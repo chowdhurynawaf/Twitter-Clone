@@ -75,6 +75,15 @@ struct TweetViewModel {
         return UIImage(named: imageName)!
     }
     
+    var shouldHideReply : Bool {
+        return !tweet.isreply
+    }
+    
+    
+    var replyText : String?{
+        guard let replyingToUserName = tweet.replyingTo else {return nil}
+        return "replying to @\(replyingToUserName)"
+    }
     
     init(tweet:Tweet) {
         self.tweet = tweet

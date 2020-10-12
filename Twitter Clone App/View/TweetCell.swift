@@ -59,8 +59,15 @@ class TweetCell : UICollectionViewCell {
         label.numberOfLines = 0
         label.text = "some caption label"
         return label
-       
-        
+    }()
+    
+    
+    private let replyLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.lightGray
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.text = "replying to @mak"
+        return label
     }()
     
     private let infoLabel = UILabel()
@@ -79,15 +86,32 @@ class TweetCell : UICollectionViewCell {
         
         profileImageView.anchor(top:safeAreaLayoutGuide.topAnchor,left: leftAnchor,paddingTop: 8,paddingLeft: 8)
         
-        let stackView = UIStackView(arrangedSubviews: [
+        let captionStackView = UIStackView(arrangedSubviews: [
         infoLabel,
         captionLabel
         ])
-        addSubview(stackView)
-        stackView.anchor(top:profileImageView.topAnchor,left: profileImageView.rightAnchor,right:rightAnchor,paddingLeft: 12,paddingRight: 12)
-        stackView.axis = .vertical
-        stackView.spacing = 4
-        stackView.distribution = .fillProportionally
+
+        captionStackView.axis = .vertical
+        captionStackView.spacing = 4
+        captionStackView.distribution = .fillProportionally
+        
+        let imageCaptionStack = UIStackView(arrangedSubviews: [profileImageView,captionStackView])
+        imageCaptionStack.distribution = .fillProportionally
+        imageCaptionStack.alignment = .leading
+        imageCaptionStack.spacing = 12
+        
+        let stack = UIStackView(arrangedSubviews: [
+        replyLabel,
+        imageCaptionStack
+        ])
+        
+        stack.axis = .vertical
+        stack.distribution = .fillProportionally
+        stack.spacing = 8
+        
+        
+        addSubview(imageCaptionStack)
+        stack.anchor(top:topAnchor,left:leftAnchor,right:rightAnchor,paddingTop: 4,paddingLeft: 12,paddingRight: 12)
         
         let actionStack = UIStackView(arrangedSubviews: [
         commentBtn,
@@ -176,6 +200,9 @@ class TweetCell : UICollectionViewCell {
         captionLabel.text = tweetVM.messageText
         likeBtn.tintColor = tweetVM.likeButtonTintColor
         likeBtn.setImage(tweetVM.likeButtonImage, for: .normal)
+        
+        replyLabel.isHidden = tweetVM.shouldHideReply
+        replyLabel.text = tweetVM.replyText
         
     }
     

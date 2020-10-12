@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProfileFilterViewDelegate : class {
-    func filterView(_ view:ProfileFilterView,didSelect indexPath:IndexPath)
+    func filterView(_ view:ProfileFilterView,didSelect index:Int)
 }
 
 let resuableIdentifier = "ProfileFilterCell"
@@ -17,6 +17,12 @@ let resuableIdentifier = "ProfileFilterCell"
 class ProfileFilterView : UIView {
     
 
+    private let UnderLineView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .twitterBlue
+        return view
+        
+    }()
     
     
     //MARK: - Properties
@@ -46,6 +52,14 @@ class ProfileFilterView : UIView {
             addSubview(collectionView)
             collectionView.addConstraintsToFillView(self)
         }
+    
+        
+    
+    override func layoutSubviews() {
+        addSubview(UnderLineView)
+        UnderLineView.anchor(left:leftAnchor,bottom:bottomAnchor,width: frame.width/3,height: 2)
+    }
+    
         required init?(coder: NSCoder) {
             fatalError()
         }
@@ -86,7 +100,15 @@ extension ProfileFilterView : UICollectionViewDataSource {
 
 extension ProfileFilterView : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.filterView(self, didSelect: indexPath)
+        let cell = collectionView.cellForItem(at: indexPath)
+        let xposition = cell?.frame.origin.x ?? 0
+        
+        UIView.animate(withDuration: 0.3) {
+            self.UnderLineView.frame.origin.x = xposition
+        }
+        
+        
+        delegate?.filterView(self, didSelect: indexPath.row)
     }
     
 }

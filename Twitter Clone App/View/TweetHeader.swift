@@ -61,6 +61,13 @@ class TweetHeader : UICollectionReusableView {
         return label
     }()
     
+    private let replylabel : UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .lightGray
+        lbl.font = UIFont.systemFont(ofSize: 12)
+        return lbl
+    }()
+    
     private lazy var statsView : UIView = {
        let view = UIView()
     
@@ -169,13 +176,23 @@ class TweetHeader : UICollectionReusableView {
         labelStackView.axis = .vertical
         
         
-        let stackView = UIStackView(arrangedSubviews: [
+        let imagestackView = UIStackView(arrangedSubviews: [
               
                   profileImageView,
                   labelStackView
               
               ])
-        stackView.spacing = 12
+        imagestackView.spacing = 12
+        
+        let stackView = UIStackView(arrangedSubviews: [
+        replylabel,
+        imagestackView
+        ])
+        
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        stackView.distribution = .fillProportionally
+        
         addSubview(stackView)
         stackView.anchor(top:topAnchor,left: leftAnchor,paddingTop: 12,paddingLeft: 12)
         
@@ -235,6 +252,8 @@ class TweetHeader : UICollectionReusableView {
         likeBtn.setImage(viewModel.likeButtonImage, for: .normal)
         likeBtn.tintColor = viewModel.likeButtonTintColor
         
+        replylabel.isHidden = viewModel.shouldHideReply
+        replylabel.text = viewModel.replyText
         
     }
     
